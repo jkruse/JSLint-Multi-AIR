@@ -1,0 +1,232 @@
+<html>
+	<head>
+		<title>JSLint Multi preferences</title>
+        <link href="jslint-multi.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="lib/air/AIRAliases.js"></script>
+		<script type="text/javascript">
+			var preferences = {
+				passfail: {
+					type: "checkbox",
+					group: "Operation",
+					defaultValue: true,
+					title: "Stop on first error",
+					description: "Should I stop checking after the first error?",
+					hidden: true
+				},
+				strict: {
+			        type: "checkbox",
+					group: "Operation",
+			        defaultValue: false,
+			        title: "Require use strict;",
+			        description: "Should I check for use strict;?"
+				},
+				safe: {
+			        type: "checkbox",
+			        group: "Operation",
+			        defaultValue: false,
+			        title: "Safe Subset",
+			        description: "Should I check for insecurities?"
+				},
+				adsafe: {
+			        type: "checkbox",
+			        group: "Operation",
+			        defaultValue: false,
+			        title: "ADsafe",
+			        description: "http://www.adsafe.org/"
+				},
+				onlyinvalid: {
+			        type: "checkbox",
+			        group: "Operation",
+			        defaultValue: false,
+			        title: "Hide valid files",
+			        description: "Should I hide valid files from the file list?"
+				},
+				extensions: {
+			        type: "text",
+			        group: "Operation",
+			        defaultValue: "js, htm, html",
+			        title: "File types:",
+			        description: "Which file types should I check?"
+				},
+				editor: {
+			        type: "selector",
+			        group: "Operation",
+			        defaultValue: "",
+			        title: "File editor:",
+			        description: "Which editor should I open when you double-click a file?"
+				},
+				browser: {
+			        type: "checkbox",
+			        group: "Assumptions",
+			        defaultValue: true,
+			        title: "Assume a browser",
+			        description: "Should I predefine the standard browser globals?"
+				},
+				widget: {
+			        type: "checkbox",
+			        group: "Assumptions",
+			        defaultValue: false,
+			        title: "Assume a Yahoo Widget",
+			        description: "Should I predefine the standard Yahoo! Widget globals?"
+				},
+				sidebar: {
+			        type: "checkbox",
+			        group: "Assumptions",
+			        defaultValue: false,
+			        title: "Assume a Windows Sidebar Gadget",
+			        description: "Should I predefine the standard Windows Sidebar Gadgets globals?"
+				},
+				rhino: {
+			        type: "checkbox",
+			        group: "Assumptions",
+			        defaultValue: false,
+			        title: "Assume Rhino",
+			        description: "Should I predefine the standard Rhino globals?"
+				},
+				predef: {
+			        type: "text",
+			        group: "Assumptions",
+			        defaultValue: "",
+			        title: "Predefine:",
+			        description: "Predefine global variables, separated with commas."
+				},
+				debug: {
+			        type: "checkbox",
+			        group: "Tolerance",
+			        defaultValue: false,
+			        title: "Tolerate debugger statements",
+			        description: "Should I allow debugger statements?"
+				},
+				evil: {
+			        type: "checkbox",
+			        group: "Tolerance",
+			        defaultValue: false,
+			        title: "Tolerate eval",
+			        description: "Should I allow the eval function?"
+				},
+				cap: {
+			        type: "checkbox",
+			        group: "Tolerance",
+			        defaultValue: false,
+			        title: "Tolerate HTML case",
+			        description: "Should I allow upper case tags?"
+				},
+				on: {
+			        type: "checkbox",
+			        group: "Tolerance",
+			        defaultValue: false,
+			        title: "Tolerate HTML event handlers",
+			        description: "Should I allow on* attributes?"
+				},
+				fragment: {
+			        type: "checkbox",
+			        group: "Tolerance",
+			        defaultValue: false,
+			        title: "Tolerate HTML fragments",
+			        description: "Should I allow partial HTML?"
+				},
+				laxbreak: {
+			        type: "checkbox",
+			        group: "Tolerance",
+			        defaultValue: false,
+			        title: "Tolerate sloppy line breaking",
+			        description: "Should I allow unsafe line breaks?"
+				},
+				forin: {
+			        type: "checkbox",
+			        group: "Tolerance",
+			        defaultValue: false,
+			        title: "Tolerate unfiltered for in",
+			        description: "Should I allow unfiltered for in?"
+				},
+				sub: {
+			        type: "checkbox",
+			        group: "Tolerance",
+			        defaultValue: false,
+			        title: "Tolerate inefficient subscripting",
+			        description: "Should I allow bracket notation with literal strings?"
+				},
+				css: {
+			        type: "checkbox",
+			        group: "Tolerance",
+			        defaultValue: false,
+			        title: "Tolerate CSS workarounds",
+			        description: "Should I allow various CSS workarounds?"
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div id="preferences">
+			<h3>Operation</h3>
+			<div>
+				<table>
+					<tr>
+						<td></td>
+						<td>
+							<input type="checkbox" id="passfail" checked="checked" />
+							<label for="passfail" title="Should I stop checking after the first error?">Stop on first error</label>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="checkbox" id="strict" />
+							<label for="strict" title="Should I check for use strict;?">Require use strict;</label>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="checkbox" id="safe" />
+							<label for="safe" title="Should I check for insecurities?">Safe Subset</label>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="checkbox" id="adsafe" />
+							<label for="adsafe" title="http://www.adsafe.org/">ADsafe</label>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="checkbox" id="onlyinvalid" />
+							<label for="onlyinvalid" title="Should I hide valid files from the file list?">Hide valid files</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="extensions" title="Which file types should I check?">File types:</label>
+						</td>
+						<td>
+							<input type="text" id="extensions" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="editor" title="Which editor should I open when you double-click a file?">File editor:</label>
+						</td>
+						<td>
+							<input type="text" id="editor" />
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<h3>Assumptions</h3>
+			<div>
+				<table>
+					<tr>
+						<td></td>
+						<td>
+							<input type="checkbox" id="browser" />
+							<label for="browser" title="Should I predefine the standard browser globals?">Assume a browser</label>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
